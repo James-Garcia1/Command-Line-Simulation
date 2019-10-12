@@ -1,27 +1,13 @@
 #include <random>
 #include <iostream>
 #include <time.h>
+#include "settings.h"
+#include "organism.h"
 
 using std::cout;
 
-class Organism {
-    public:
-        int x_pos;
-        int y_pos;
-        void create_organism(int height, int width);
-        void move();
-    private:
-        int surfaceHeight;
-        int surfaceWidth;
-        char start;
-        void start_position();
-        void primary_direction();
-} ;
-
 //public function to create an orgnaism
-void Organism::create_organism(int height, int width) {
-    surfaceHeight = height;
-    surfaceWidth = width;
+void Organism::create_organism() {
     start_position();
 }
 
