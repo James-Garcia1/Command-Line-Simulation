@@ -4,15 +4,16 @@
 
 class Organism {
     public:
+        char ID;
         int x_pos;
         int y_pos;
-        bool nourished = false;
         bool nour_and_return = false;
         void create_organism();
         void move();
         void food_check(char** surface);
     private:
         Settings s;
+        bool nourished = false;
         int surfaceHeight = s.height;
         int surfaceWidth = s.width;
         char side;
