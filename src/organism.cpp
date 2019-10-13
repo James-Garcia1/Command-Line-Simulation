@@ -17,23 +17,23 @@ void Organism::start_position() {
     switch (rand() % 4)
     {
     case 0:
-        y_pos = rand() % surfaceHeight;
+        y_pos = rand() % surfaceWidth;
         x_pos = 0;
         start = 'L';
         break;
     case 1:
-        y_pos = rand() % surfaceHeight;
-        x_pos = surfaceWidth - 1;
+        y_pos = rand() % surfaceWidth;
+        x_pos = surfaceHeight - 1;
         start = 'R';
         break;
     case 2:
         y_pos = 0;
-        x_pos = rand() % surfaceWidth;
+        x_pos = rand() % surfaceHeight;
         start = 'T';
         break;
     case 3:
-        y_pos = surfaceHeight - 1;
-        x_pos = rand() % surfaceWidth;
+        y_pos = surfaceWidth - 1;
+        x_pos = rand() % surfaceHeight;
         start = 'B';
         break;
     default:
@@ -53,7 +53,7 @@ void Organism::move() {
             primary_direction();
             break;
         case 1:
-            if (x_pos == surfaceWidth - 1) {
+            if (x_pos == surfaceHeight - 1) {
                 x_pos -= 1;
                 break;
             }
@@ -67,7 +67,7 @@ void Organism::move() {
             x_pos -= 1;
             break;
         case 3:
-            if (y_pos == surfaceHeight - 1) {
+            if (y_pos == surfaceWidth - 1) {
                 y_pos -= 1;
                 break;
             }
@@ -95,7 +95,7 @@ void Organism::move() {
             x_pos -= 1;
             break;
         case 'R':
-            if (x_pos == surfaceWidth - 1) {
+            if (x_pos == surfaceHeight - 1) {
                 nour_and_return = true;
                 break;
             }
@@ -109,7 +109,7 @@ void Organism::move() {
             y_pos -= 1;
             break;
         case 'B':
-            if (y_pos == surfaceHeight - 1) {
+            if (y_pos == surfaceWidth - 1) {
                 nour_and_return = true;
                 break;
             }
@@ -131,7 +131,7 @@ void Organism::primary_direction() {
     switch (start)
     {
     case 'L':
-        if (x_pos == surfaceWidth - 1) {
+        if (x_pos == surfaceHeight - 1) {
             x_pos -= 1;
             break;
         }
@@ -145,7 +145,7 @@ void Organism::primary_direction() {
         x_pos -= 1;
         break;
     case 'T':
-        if (y_pos == surfaceHeight - 1) {
+        if (y_pos == surfaceWidth - 1) {
             y_pos -= 1;
             break;
         }
@@ -180,20 +180,20 @@ void Organism::food_check(char** surface) {
 void Organism::return_side() {
     int shortest_x, shortest_y;
     char side_x, side_y;
-    if ((surfaceWidth - 1 - x_pos) > (x_pos - 0)) {
+    if ((surfaceHeight - 1 - x_pos) > (x_pos - 0)) {
         shortest_x = x_pos;
         side_x = 'L';
     }
     else {
-        shortest_x = surfaceWidth - 1 - x_pos;
+        shortest_x = surfaceHeight - 1 - x_pos;
         side_x = 'R';
     }
-    if ((surfaceHeight - 1 - y_pos) > (y_pos - 0)) {
+    if ((surfaceWidth - 1 - y_pos) > (y_pos - 0)) {
         shortest_y = y_pos;
         side_y = 'T';
     }
     else {
-        shortest_y = surfaceHeight - 1 - y_pos;
+        shortest_y = surfaceWidth - 1 - y_pos;
         side_y = 'B';
     }
     if (shortest_x > shortest_y)
