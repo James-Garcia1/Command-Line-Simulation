@@ -47,7 +47,7 @@ main() {
             old_y_pos.push_back (current->y_pos);
         }
         
-        for (unsigned int dayCounter = 0; dayCounter < s.numDays; ++dayCounter) {
+        for (unsigned int dayCounter = 0; dayCounter < s.numDays && check != 0; ++dayCounter) {
             //Outputs surface
             for (int i = 0; i < s.height; ++i) {
                 for (int j = 0; j < s.width; ++j){
@@ -67,7 +67,7 @@ main() {
                 old_x_pos[i] = current->x_pos;
                 old_y_pos[i] = current->y_pos;
             }
-            cout << "continue? ";
+            cout << "non zero Int to continue, 0 to quit, non int to auto-run: ";
             
             cin >> check;
         }
