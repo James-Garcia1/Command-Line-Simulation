@@ -167,9 +167,11 @@ void Organism::primary_direction() {
 
 //Checks choosen move spot for food
 void Organism::food_check(char** surface) {
-    if (surface[x_pos][y_pos] == '*') {
-        nourished = true;
-        return_side();
+    if (!nourished) {
+        if (surface[x_pos][y_pos] == '*') {
+            nourished = true;
+            return_side();
+        }
     }
     return;
 }
