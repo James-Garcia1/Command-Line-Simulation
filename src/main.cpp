@@ -67,7 +67,7 @@ main() {
                 old_x_pos[i] = current->x_pos;
                 old_y_pos[i] = current->y_pos;
             }
-            cout << "non zero Int to continue, 0 to quit, non int to auto-run: ";
+            cout << "Nonzero int continue, 0 quit, Nonint auto-run: ";
             
             cin >> check;
         }
