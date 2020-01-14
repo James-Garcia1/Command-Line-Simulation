@@ -4,4 +4,4 @@ A small simulation where a user-inputted number of "organisms" have a certain nu
 
 Change settings in settings.h.
 
-Run with any c++ compiler with the command: g++ -std=c++17 main.cpp organism.cpp manage.cpp
+Run in cli with the command: g++ -std=c++17 main.cpp organism.cpp manage.cpp
